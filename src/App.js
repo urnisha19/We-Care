@@ -23,10 +23,10 @@ function App() {
       <Router>
         <Switch>
           {/* Home Page */}
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route exact path="/">
+          <Route path="/home">
             <Home></Home>
           </Route>
 
