@@ -3,8 +3,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './Components/HomePage/Home';
 import AboutUs from './Components/AboutUsPage/AboutUs';
@@ -33,48 +32,48 @@ function App() {
 
           {/* About Us Page */}
           <Route path="/aboutUs">
-            <AboutUs></AboutUs>
+            <AboutUs />
           </Route>
 
           {/*Our Services Page */}
           <Route path="/ourServices">
-            <ServicePage></ServicePage>
+            <ServicePage />
           </Route>
 
           {/* Our Psychotherapists Page */}
-          <Route path="/ourPsychotherapist">
-            <PsychotherapistPage></PsychotherapistPage>
+          <Route path="/ourPsychotherapists">
+            <PsychotherapistPage />
           </Route>
 
           {/* Your Dashboard Page */}
-          <Route path="dashboard/myAppointments">
-            <MyAppointments></MyAppointments>
+          <Route path="/dashboard/myAppointments">
+            <MyAppointments />
           </Route>
-          <Route path="dashboard/addReview">
-            <AddReview></AddReview>
+          <Route path="/dashboard/addReview">
+            <AddReview />
           </Route>
 
           {/* Admin Page */}
-          <Route path="admin/allAppointments">
-            <AllAppointment></AllAppointment>
+          <Route path="/admin/allAppointments">
+            <AllAppointment />
           </Route>
-          <Route path="admin/addService">
-            <AddService></AddService>
+          <Route path="/admin/addService">
+            <AddService />
           </Route>
 
           {/* Contact Us Page */}
           <Route path="/contactUs">
-            <ContactUs></ContactUs>
+            <ContactUs />
           </Route>
 
           {/* Login Page */}
           <Route path="/login">
-            <Login></Login>
+            <Login />
           </Route>
 
           {/* Route Not Page */}
           <Route path="*">
-            <NotFoundPage></NotFoundPage>
+            <NotFoundPage />
           </Route>
 
         </Switch>

@@ -8,20 +8,20 @@ const NavBar = () => {
     return (
         <Container>
             <Navbar bg="***" expand="lg">
-                <Link>
+                <Link to="/home">
                     <img src={logo} alt="" className="logo w-50 px-3" />
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Link path="/home" className="navBar-link">Home</Link>
-                        <Link path="/aboutUs" className="navBar-link">About Us</Link>
-                        <Link path="/ourServices" className="navBar-link">Services</Link>
-                        <Link path="/ourPsychotherapist" className="navBar-link">Our Psychotherapist </Link>
-                        <Link path="dashboard/myAppointments" className="navBar-link">Your Dashboard</Link>
-                        <Link path="admin/allAppointments" className="navBar-link">Admin</Link>
-                        <Link path="/contactUs" className="navBar-link">Contact Us</Link>
-                        <Link path="/login" className="navBar-link">  <Button className="navBar-button">Login</Button></Link>
+                        <Link to="/home" className="navBar-link">Home</Link>
+                        <Link to="/aboutUs" className="navBar-link">About Us</Link>
+                        <Link to="/ourServices" className="navBar-link">Services</Link>
+                        <Link to="/ourPsychotherapists" className="navBar-link">Our Psychotherapist </Link>
+                        <Link to="/dashboard/myAppointments" className="navBar-link">Your Dashboard</Link>
+                        <Link to="/admin/allAppointments" className="navBar-link">Admin</Link>
+                        <Link to="/contactUs" className="navBar-link">Contact Us</Link>
+                        <Link to="/login" className="navBar-link">  <Button className="navBar-button">Login</Button></Link>
                     </Nav>
                 </ Navbar.Collapse>
             </Navbar>
