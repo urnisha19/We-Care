@@ -1,0 +1,14 @@
+@media screen and (max-width: 700px) {
+    .side-img {
+        display: none
+    }
+
+    .service-list {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.icon-color {
+    color: #EA6077;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
 import './AboutUs.css';
 import NavBar from '../MultiSharedComponents/NavBar/NavBar';
-import WhoWeAre from './WhoWeAre/WhoWeAre';
+import HowCanWeHelp from './HowCanWeHelp/HowCanWeHelp';
 import WhatWeDo from './WhatWeDo/WhatWeDo';
 import OurOutComes from './OurOutComes/OurOutComes';
 import Footer from '../MultiSharedComponents/Footer/Footer';
+import AboutUsBanner from './AboutUsBanner/AboutUsBanner';
+
 
 const AboutUs = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <WhoWeAre></WhoWeAre>
+            <AboutUsBanner></AboutUsBanner>
+            <HowCanWeHelp></HowCanWeHelp>
             <WhatWeDo></WhatWeDo>
             <OurOutComes></OurOutComes>
             <Footer></Footer>

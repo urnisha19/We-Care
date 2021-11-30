@@ -1,7 +1,8 @@
 .navBar-link {
     text-decoration: none;
     padding: 0px 20px;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 1.2em;
     color: black;
     border-bottom: 4px solid transparent;
     transition: .5s;

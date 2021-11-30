@@ -16,9 +16,7 @@
 
 
 .top-banner h1 {
-    font-weight: 700;
-    color: #EA6077;
-    font-size: 60px;
+    font-size: 2.8em;
     animation: animation 2s ease infinite;
 }
 
@@ -33,7 +31,7 @@
 }
 
 .top-banner h2 {
-    font-size: 40px;
+    font-size: 2.8em;
 }
 
 @media screen and (max-width: 900px) {

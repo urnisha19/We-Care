@@ -7,11 +7,11 @@ const TopBanner = () => {
     return (
         <section className="top-banner">
             <div className="container">
-                <div className="row d-flex align-items-center top-banner-content p-5">
+                <div className="row d-flex align-items-center p-5">
                     <div className="col-md-6 col-12 col-sm-6">
-                        <h2 className="text-brand">Be smart and help yourself now</h2>
-                        <h1 className="text-brand">We Care</h1>
-                        <p className="py-3">Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit. Purus commodo ipsum duis <br /> laoreet maecenas. Feugiat </p>
+                        <h2>Be smart and help yourself now</h2>
+                        <h1 className="text-highlight ">We Care</h1>
+                        <p >Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit. Purus commodo ipsum duis <br /> laoreet maecenas. Feugiat </p>
                         <Button className="appointment-button">Get a consulation</Button>
                     </div>
                     <div className="col-md-6 col-12 col-sm-6">
