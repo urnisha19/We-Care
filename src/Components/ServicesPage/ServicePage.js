@@ -7,6 +7,7 @@ import Services from '../MultiSharedComponents/Services/Services';
 import Footer from '../MultiSharedComponents/Footer/Footer'
 
 const ServicePage = () => {
+    
     return (
         <div>
             <NavBar></NavBar>
