@@ -1,0 +1,20 @@
+.facilityDetail {
+    border: 1px solid #ddd;
+    transition: .5s;
+}
+
+.facilityDetail:hover {
+    box-shadow: 0 0 10px 10px #ddd;
+    background-color: white;
+    transform: translateY(-10px);
+    transition: .5s ease-in-out;
+}
+
+.facilityDetail h5, .facilityDetail p {
+    margin: 0;
+}
+
+.facilityDetail-text {
+    line-height: 24px;
+    font-size: 15px;
+}

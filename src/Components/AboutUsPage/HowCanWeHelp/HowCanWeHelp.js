@@ -9,14 +9,10 @@ const HowCanWeHelp = () => {
     return (
         <div className="container">
             <div className="row d-flex align-items-center p-5">
-                <div >
-                    <p className="text-highlight">How can we help you ?</p>
-                    <h3>Tell us and we shall find you a way.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                    </p>
-                </div>
                 <div className="col-md-6 col-12 col-sm-6">
                     <div className="row d-flex align-items-center p-5 service-list">
+                        <p className="text-highlight">How can we help you ?</p>
+                        <h3 className="mb-3">Tell us and we shall find you a way.</h3>
                         <div className="col-md-6 col-12 col-sm-6">
                             <p><FontAwesomeIcon icon={faArrowCircleRight} className="icon-color" /> Anxiety and Depression</p>
                             <p><FontAwesomeIcon icon={faArrowCircleRight} className="icon-color" />Relationships Issues</p>
@@ -27,6 +23,7 @@ const HowCanWeHelp = () => {
                             <p><FontAwesomeIcon icon={faArrowCircleRight} className="icon-color" />Trauma/Abuse</p>
                             <p><FontAwesomeIcon icon={faArrowCircleRight} className="icon-color" />Grief and Bereavement</p>
                             <p><FontAwesomeIcon icon={faArrowCircleRight} className="icon-color" />Phase of Life Transitions</p>
+                            <p><FontAwesomeIcon icon={faArrowCircleRight} className="icon-color" />Low Self-Esteem</p>
                         </div>
                     </div>
                 </div>

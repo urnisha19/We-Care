@@ -4,7 +4,7 @@ import './OurOutComes.css';
 const OurOutComes = () => {
 
     return (
-        <div className="container">
+        <div className="container mb-5">
             <div className="row d-flex align-items-center p-5">
                 <div className="mb-5 text-center">
                     <p className="text-highlight">Our Success</p>
