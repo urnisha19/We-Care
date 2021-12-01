@@ -17,7 +17,6 @@ const Footer = () => {
         { name: "Terms Conditions", link: "#" },
     ]
     const quickLinks = [
-        { name: "Quick Links", link: "#" },
         { name: "Contact", link: "#" },
         { name: "Our Blog", link: "#" }
     ]
