@@ -2,10 +2,11 @@ import React from 'react';
 import './OurOutComes.css';
 
 const OurOutComes = () => {
+
     return (
         <div className="container">
             <div className="row d-flex align-items-center p-5">
-                <div className="mb-5">
+                <div className="mb-5 text-center">
                     <p className="text-highlight">Our Success</p>
                     <h3>A healing touch to heal you completely.</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.

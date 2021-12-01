@@ -5,6 +5,7 @@ import './WhoWeAre.css';
 import { Link } from 'react-router-dom';
 
 const WhoWeAre = () => {
+    
     return (
         <section>
             <div className="container">

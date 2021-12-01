@@ -22,6 +22,7 @@ const Footer = () => {
         { name: "Our Blog", link: "#" }
     ]
     const aboutUs = []
+
     return (
         <footer className="footer-area clear-both">
             <div className="container pt-5">

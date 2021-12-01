@@ -1,0 +1,27 @@
+.contact-form {
+    box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.05),
+        3px 3px 6px rgba(0, 0, 0, 0.5);
+    border-radius: .5em;
+}
+
+.contact-form .form-control:focus, .contact-form textarea:focus {
+    background-color: transparent;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: darkgray;
+}
+
+.form-control[type="submit"] {
+    background-color: #EA6077;
+    color: white;
+    font-weight: 700;
+}
+
+.address-area {
+    padding: 5px;
+}

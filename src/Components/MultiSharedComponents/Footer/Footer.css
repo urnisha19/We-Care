@@ -1,16 +1,19 @@
-.footer-area{
-    background-color:#DFE9F2;
+.footer-area {
+    background-color: #DFE9F2;
     ;
     background-size: cover;
 }
-.footer-area li{
+
+.footer-area li {
     padding-bottom: 10px;
 }
-.footer-area li a{
+
+.footer-area li a {
     text-decoration: none;
     color: black;
 }
-.social-media .icon{
+
+.social-media .icon {
     height: 40px;
     width: 40px;
     color: #EA6077;
@@ -18,10 +21,12 @@
     border: 1px solid #EA6077;
     padding: 10px;
 }
-.social-media .active-icon{
-    background-color: #EA6077 ;
-    color:white;
+
+.social-media .active-icon {
+    background-color: #EA6077;
+    color: white;
 }
-.footer-text{
+
+.footer-text {
     font-size: medium;
 }

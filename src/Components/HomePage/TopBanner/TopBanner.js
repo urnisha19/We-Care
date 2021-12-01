@@ -4,6 +4,7 @@ import topBanner from '../../../Images/we_care.jpg';
 import './TopBanner.css';
 
 const TopBanner = () => {
+    
     return (
         <section className="top-banner">
             <div className="container">
