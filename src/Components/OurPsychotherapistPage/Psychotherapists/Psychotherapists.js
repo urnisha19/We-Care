@@ -17,7 +17,7 @@ const Psychotherapists = () => {
         <div>
             <div className="container text-center mt-5"> 
             <p className="text-highlight">Meet Our Team</p>
-            <h3 className="mb-3">Professional Psychologist</h3>
+            <h3 className="mb-3">Professional Psychotherapists</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
             </div>
             <div className="d-flex justify-content-center my-5">

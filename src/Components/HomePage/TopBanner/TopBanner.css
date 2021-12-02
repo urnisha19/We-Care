@@ -46,12 +46,13 @@
 
 
 .appointment-button {
-    background-color: #08878D;
+    background-color: #EA6077;
     border: none;
     font-weight: 500;
     border-radius: 20px;
 }
 
-.appointment-button {
-    background-color: #EA6077;
+.appointment-button:hover {
+    background-color: #08878D;
 }
+    

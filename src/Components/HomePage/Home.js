@@ -5,6 +5,7 @@ import WhyChoose from './WhyChooseUs/Facilities';
 import ClientReviews from './ClientReviews/Reviews';
 import Footer from '../MultiSharedComponents/Footer/Footer';
 import WhoWeAre from './WhoWeAre/WhoWeAre'
+import WhatWeOffer from './WhatWeOffer/WhatWeOffer';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
             <TopBanner></TopBanner>
             <WhoWeAre></WhoWeAre>
             <WhyChoose></WhyChoose>
+            <WhatWeOffer></WhatWeOffer>
             <ClientReviews></ClientReviews>
             <Footer></Footer>
         </div>

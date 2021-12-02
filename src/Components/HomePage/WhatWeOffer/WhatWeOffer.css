@@ -1,0 +1,22 @@
+
+.serviceDetail {
+    border: 1px solid #ddd;
+    transition: .5s;
+    background-color: white;
+}
+
+.serviceDetail:hover {
+    box-shadow: 0 0 10px 10px #ddd;
+    background-color: #DFE9F2;
+    transform: translateY(-5px);
+    transition: .5s ease-in-out;
+}
+
+.serviceDetail h5, .serviceDetail p {
+    margin: 0;
+}
+
+.serviceDetail-text {
+    line-height: 24px;
+    font-size: 15px;
+}

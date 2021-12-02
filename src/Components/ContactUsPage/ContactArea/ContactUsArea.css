@@ -22,6 +22,11 @@
     font-weight: 700;
 }
 
+.form-control[type="submit"]:hover {
+    background-color: #08878D;
+
+}
+
 .address-area {
     padding: 5px;
 }
