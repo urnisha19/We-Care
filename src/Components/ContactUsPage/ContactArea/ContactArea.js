@@ -21,25 +21,25 @@ const ContactArea = () => {
                 </div>
 
                 <div className="col-md-6 col-12 col-sm-6">
-                    <div class="py-3">
-                        <form class="contact-form p-3" action="https://formspree.io/f/moqpyjvv" method="POST"
+                    <div className="py-3">
+                        <form className="contact-form p-3" action="https://formspree.io/f/moqpyjvv" method="POST"
                             id="contact-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Your name..." required />
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="name" placeholder="Your name..." required />
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email"
+                            <div className="form-group">
+                                <input type="email" className="form-control" name="email"
                                     placeholder="Your email address..." required />
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject..."
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="subject" placeholder="Subject..."
                                     required />
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="4" placeholder="Your message..."
+                            <div className="form-group">
+                                <textarea className="form-control" name="message" rows="4" placeholder="Your message..."
                                     required></textarea>
                             </div>
-                            <input type="submit" class="form-control" value="Send Message" />
+                            <input type="submit" className="form-control" value="Send Message" />
                         </form>
                     </div>
                 </div>

@@ -1,8 +1,7 @@
 import React from 'react';
-import './WhatWeDo.css';
 
 const WhatWeDo = () => {
-    
+
     return (
         <div className="container text-center mt-5 mb-5">
             <p className="text-highlight">What We Do</p>

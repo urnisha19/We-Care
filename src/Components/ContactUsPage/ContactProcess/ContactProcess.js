@@ -1,11 +1,11 @@
 import React from 'react';
-import './ContactProcess.css'
 import contactUs from '../../../Images/contactUs.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarCheck, faHandsHelping, faHeadset } from '@fortawesome/free-solid-svg-icons';
+import './ContactProcess.css'
 
 const ContactProcess = () => {
-    
+
     return (
         <div className="container">
             <div className="row d-flex align-items-center p-5">

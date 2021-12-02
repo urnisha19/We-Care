@@ -1,8 +1,8 @@
 import React from 'react';
-import './NavBar.css';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import logo from '../../../Images/logo.svg'
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 const NavBar = () => {
 

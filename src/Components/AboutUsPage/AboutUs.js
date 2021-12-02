@@ -1,5 +1,4 @@
 import React from 'react';
-import './AboutUs.css';
 import NavBar from '../MultiSharedComponents/NavBar/NavBar';
 import HowCanWeHelp from './HowCanWeHelp/HowCanWeHelp';
 import WhatWeDo from './WhatWeDo/WhatWeDo';

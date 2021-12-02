@@ -1,7 +1,7 @@
 import React from 'react';
-import './AddReview.css';
 import NavBar from './../../MultiSharedComponents/NavBar/NavBar';
 import ClientSideBar from './../ClientSideBar/ClientSideBar';
+import './AddReview.css';
 
 const AddReview = () => {
     

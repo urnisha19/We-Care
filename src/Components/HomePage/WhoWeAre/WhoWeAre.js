@@ -1,8 +1,8 @@
 import React from 'react';
 import whoWeAre from '../../../Images/whoWeAre.jpg';
 import { Button } from 'react-bootstrap';
-import './WhoWeAre.css';
 import { Link } from 'react-router-dom';
+import './WhoWeAre.css';
 
 const WhoWeAre = () => {
 

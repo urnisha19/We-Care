@@ -1,0 +1,35 @@
+.psychotherapistDetail {
+    border: 1px solid #ddd;
+    transition: .5s;
+}
+
+.psychotherapistDetail:hover {
+    box-shadow: 0 0 10px 10px #ddd;
+    background-color: white;
+    transform: translateY(-10px);
+    transition: .5s ease-in-out;
+}
+
+.psychotherapistDetail h4, .psychotherapistDetail p {
+    margin: 0;
+}
+
+.psychotherapistDetail-text {
+    line-height: 24px;
+    font-size: 15px;
+}
+
+.make-appointment-btn {
+    background-color: #EA6077;
+    border: none;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.make-appointment-btn:hover {
+    background-color: #08878D;
+}
+
+.font-bold {
+    font-weight: 700;
+}

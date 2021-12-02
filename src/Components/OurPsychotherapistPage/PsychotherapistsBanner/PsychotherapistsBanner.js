@@ -1,4 +1,5 @@
 import React from 'react';
+import './PsychotherapistsBanner.css';
 
 const PsychotherapistsBanner = () => {
     

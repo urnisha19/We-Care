@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../../MultiSharedComponents/NavBar/NavBar';
-import './AddService.css';
 import AdminSideBar from './../AdminSideBar/AdminSideBar';
+import './AddService.css';
 
 const AddService = () => {
     

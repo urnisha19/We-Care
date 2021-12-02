@@ -1,7 +1,7 @@
 import React from 'react';
-import './MyAppointments.css';
 import NavBar from './../../MultiSharedComponents/NavBar/NavBar';
 import ClientSideBar from '../ClientSideBar/ClientSideBar';
+import './MyAppointments.css';
 
 const MyAppointments = () => {
 
