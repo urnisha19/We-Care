@@ -17,6 +17,7 @@ import AddService from './Components/AdminPage/AddService/AddService';
 import ContactUs from './Components/ContactUsPage/ContactUs';
 import Login from './Components/LoginPage/Login';
 import NotFoundPage from './Components/NotFound/NotFoundPage';
+import PrivateRoute from './Components/LoginPage/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -51,21 +52,21 @@ function App() {
             <PsychotherapistPage />
           </Route>
 
-          {/* Your Dashboard Page */}
-          <Route path="/dashboard/myAppointments">
+          {/* Your Dashboard Page-only authenticate user */}
+          <PrivateRoute path="/dashboard/myAppointments">
             <MyAppointments />
-          </Route>
-          <Route path="/dashboard/addReview">
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/addReview">
             <AddReview />
-          </Route>
+          </PrivateRoute>
 
-          {/* Admin Page */}
-          <Route path="/admin/allAppointments">
+          {/* Admin Page-only authenticate user*/}
+          <PrivateRoute path="/admin/allAppointments">
             <AllAppointment />
-          </Route>
-          <Route path="/admin/addService">
+          </PrivateRoute>
+          <PrivateRoute path="/admin/addService">
             <AddService />
-          </Route>
+          </PrivateRoute>
 
           {/* Contact Us Page */}
           <Route path="/contactUs">
