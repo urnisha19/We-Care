@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../../App';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import logo from '../../../Images/logo.svg'
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 const NavBar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     return (
         <Container>
@@ -21,7 +23,12 @@ const NavBar = () => {
                         <Link to="/contactUs" className="navBar-link">Contact Us</Link>
                         <Link to="/dashboard/myAppointments" className="navBar-link">Your Dashboard</Link>
                         <Link to="/admin/allAppointments" className="navBar-link">Admin</Link>
-                        <Link to="/login" className="navBar-link">  <Button className="navBar-button">Login</Button></Link>
+                        {
+                            loggedInUser.email ?
+                                <Button onClick={() => setLoggedInUser({})} className="navBar-button">Logout</Button>
+                                :
+                                <Link to="/login" className="navBar-link">  <Button className="navBar-button">Login</Button></Link>
+                        }
                     </Nav>
                 </ Navbar.Collapse>
             </Navbar>

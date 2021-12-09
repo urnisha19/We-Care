@@ -8,11 +8,18 @@ import { Button } from 'react-bootstrap';
 import logo from '../../Images/logo.svg';
 import googleIcon from '../../Images/googleIcon.png';
 import './Login.css';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 firebase.initializeApp(firebaseConfig);//firebase initialization
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext); //consume userContext created in App.js
+
+    //Login kora por page redirect korar jonno useHistory() and useLocation() use kora hoy. history redirect kore and locationkun location tke asche state niye ashe
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } }; //Private route teke login e ashle login kora por location.state dara oi component e jabe else home page e jabe. tarpor login hocche se function e amra history.replace(from) dara page replace kore dibo
 
     const provider = new GoogleAuthProvider();//Create an instance of the Google provider object
     const auth = getAuth();
@@ -41,29 +48,13 @@ const Login = () => {
                 }
                 setUser(signedInUser); //set user in the state
                 setLoggedInUser(signedInUser); //context e loggedInUser set 
+                history.replace(from); //sign in hobar pore kun page e jabe ta history.replace
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 console.log(setError);
                 setError({ errorMessage }); //set state to show the error message
             });
-    }
-
-    const handleGoogleSignOut = () => {
-        signOut(auth)
-            .then((res) => {
-                const signedOutUser = {
-                    isSignedIn: false,
-                    name: "",
-                    email: ""
-                }
-                setUser(signedOutUser);
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log(setError);
-                setError({ errorMessage }); //set state to show the error message
-            })
     }
 
     return (
@@ -80,14 +71,14 @@ const Login = () => {
             </div>
             <div className="login-box col-md-6 offset-md-3">
                 {
-                    user.isSignedIn ?
-                        <h4 className="font-weight-bold text-center">Sign Out</h4>
+                    loggedInUser.email ?
+                        <h4 className="font-weight-bold text-center">Click the button to Log Out</h4>
                         :
                         <h4 className="font-weight-bold text-center">Login With</h4>
                 }
                 {
-                    user.isSignedIn ?
-                        <button className="my-3" onClick={handleGoogleSignOut}><img src={googleIcon} alt="google-icon" /> Sign out</button>
+                    loggedInUser.email ?
+                        <button className="my-3" onClick={() => setLoggedInUser({})}><img src={googleIcon} alt="google-icon" /> Log out</button>
                         :
                         <button className="my-3" onClick={handleGoogleSignIn}><img src={googleIcon} alt="google-icon" /> Continue with Google</button>
                 }
