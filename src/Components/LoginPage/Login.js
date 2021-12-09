@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../App';
 import firebase from 'firebase/compat/app';
 import firebaseConfig from './firebase.config';
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
@@ -11,6 +12,8 @@ import './Login.css';
 firebase.initializeApp(firebaseConfig);//firebase initialization
 
 const Login = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext); //consume userContext created in App.js
+
     const provider = new GoogleAuthProvider();//Create an instance of the Google provider object
     const auth = getAuth();
 
@@ -37,6 +40,7 @@ const Login = () => {
                     email: email
                 }
                 setUser(signedInUser); //set user in the state
+                setLoggedInUser(signedInUser); //context e loggedInUser set 
             })
             .catch((error) => {
                 const errorMessage = error.message;

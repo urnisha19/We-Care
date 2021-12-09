@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React, { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,9 +18,14 @@ import ContactUs from './Components/ContactUsPage/ContactUs';
 import Login from './Components/LoginPage/Login';
 import NotFoundPage from './Components/NotFound/NotFoundPage';
 
+export const UserContext = createContext();
+
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
-    <div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      {/* <h1>Email:{loggedInUser.email}</h1> */}{/* Checked LoggedInUser set or not in the context */}
       <Router>
         <Switch>
           {/* Home Page */}
@@ -78,7 +84,7 @@ function App() {
 
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 
