@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { UserContext } from '../../App';
 import firebase from 'firebase/compat/app';
 import firebaseConfig from './firebase.config';
-import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import logo from '../../Images/logo.svg';
