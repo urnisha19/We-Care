@@ -2,7 +2,7 @@ import React from 'react';
 import './ServiceTopBanner.css';
 
 const ServiceTopBanner = () => {
-    
+
     return (
         <div className="banner">
             <h1 className="text-highlight mt-5">What We Can Offer</h1>

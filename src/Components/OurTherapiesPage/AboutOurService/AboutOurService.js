@@ -2,7 +2,6 @@ import React from 'react';
 import aboutService from '../../../Images/aboutService.jpg'
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './AboutOurService.css';
 
 const AboutOurService = () => {
 

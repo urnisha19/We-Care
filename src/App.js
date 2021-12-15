@@ -8,16 +8,17 @@ import {
 } from "react-router-dom";
 import Home from './Components/HomePage/Home';
 import AboutUs from './Components/AboutUsPage/AboutUs';
-import ServicePage from './Components/ServicesPage/ServicePage';
+import OurServices from './Components/OurTherapiesPage/OurServices';
 import PsychotherapistPage from './Components/OurPsychotherapistPage/PsychotherapistPage';
 import MyAppointments from './Components/DashboardPage/MyAppointments/MyAppointments';
 import AddReview from './Components/DashboardPage/AddReview/AddReview';
 import AllAppointment from './Components/AdminPage/AllApointment/AllAppointment';
-import AddService from './Components/AdminPage/AddService/AddService';
+import AddTherapy from './Components/AdminPage/AddTherapy/AddTherapy';
 import ContactUs from './Components/ContactUsPage/ContactUs';
 import Login from './Components/LoginPage/Login';
 import NotFoundPage from './Components/NotFound/NotFoundPage';
 import PrivateRoute from './Components/LoginPage/PrivateRoute/PrivateRoute';
+import TherapyDetail from './Components/OurTherapiesPage/Therapies/TherapyDetail/TherapyDetail';
 
 export const UserContext = createContext();
 
@@ -44,7 +45,10 @@ function App() {
 
           {/*Our Services Page */}
           <Route path="/ourServices">
-            <ServicePage />
+            <OurServices />
+          </Route>
+          <Route path="/therapies/therapyDetail">
+            <TherapyDetail />
           </Route>
 
           {/* Our Psychotherapists Page */}
@@ -64,8 +68,8 @@ function App() {
           <PrivateRoute path="/admin/allAppointments">
             <AllAppointment />
           </PrivateRoute>
-          <PrivateRoute path="/admin/addService">
-            <AddService />
+          <PrivateRoute path="/admin/addTherapy">
+            <AddTherapy />
           </PrivateRoute>
 
           {/* Contact Us Page */}

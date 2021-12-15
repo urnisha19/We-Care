@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from './../MultiSharedComponents/NavBar/NavBar';
 
 const NotFoundPage = () => {
     const notMatchStyle = {
@@ -14,12 +13,9 @@ const NotFoundPage = () => {
     }
 
     return (
-        <div>
-            <NavBar></NavBar>
-            <div style={notMatchStyle}>
-                <h2>404 Error!!!</h2>
-                <h2>Route Not Found!!!</h2>
-            </div>
+        <div style={notMatchStyle}>
+            <h2>404 Error!!!</h2>
+            <h2>Route Not Found!!!</h2>
         </div>
     );
 };

@@ -17,7 +17,8 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Link to="/home" className="navBar-link">Home</Link> <Link to="/ourServices" className="navBar-link">Our Therapies</Link>
+                        <Link to="/home" className="navBar-link">Home</Link>
+                        <Link to="/ourServices" className="navBar-link">Our Therapies</Link>
                         <Link to="/ourPsychotherapists" className="navBar-link">Our Psychotherapist </Link>
                         <Link to="/aboutUs" className="navBar-link">About Us</Link>
                         <Link to="/contactUs" className="navBar-link">Contact Us</Link>

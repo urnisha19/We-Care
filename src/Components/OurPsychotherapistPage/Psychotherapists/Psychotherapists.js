@@ -15,21 +15,21 @@ const Psychotherapists = () => {
 
     return (
         <div>
-            <div className="container text-center mt-5"> 
-            <p className="text-highlight">Meet Our Team</p>
-            <h3 className="mb-3">Professional Psychotherapists</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            <div className="container text-center mt-5">
+                <p className="text-highlight">Meet Our Team</p>
+                <h3 className="mb-3">Professional Psychotherapists</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
             </div>
             <div className="d-flex justify-content-center my-5">
-            <div className="row w-75">
-                {
-                    Psychotherapists.map(psychotherapist =>
-                        <PsychotherapistsDetails psychotherapist={psychotherapist} key={psychotherapist.id}></PsychotherapistsDetails>)
-                }
+                <div className="row w-75">
+                    {
+                        Psychotherapists.map(psychotherapist =>
+                            <PsychotherapistsDetails psychotherapist={psychotherapist} key={psychotherapist.id}></PsychotherapistsDetails>)
+                    }
+                </div>
             </div>
         </div>
-        </div>
-        
+
     );
 };
 

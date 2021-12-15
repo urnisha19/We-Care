@@ -3,6 +3,7 @@ import { UserContext } from '../../App';
 import firebase from 'firebase/compat/app';
 import firebaseConfig from './firebase.config';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import NavBar from '../MultiSharedComponents/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import logo from '../../Images/logo.svg';
@@ -24,13 +25,6 @@ const Login = () => {
     const provider = new GoogleAuthProvider();//Create an instance of the Google provider object
     const auth = getAuth();
 
-    //Set logged in user in state. Initial state when not logged in
-    const [user, setUser] = useState({
-        isSignedIn: false,
-        name: "",
-        email: ""
-    });
-
     //Set error in state. Initial state an empty object
     const [error, setError] = useState({});
 
@@ -46,7 +40,6 @@ const Login = () => {
                     name: name,
                     email: email
                 }
-                setUser(signedInUser); //set user in the state
                 setLoggedInUser(signedInUser); //context e loggedInUser set 
                 history.replace(from); //sign in hobar pore kun page e jabe ta history.replace
             })
@@ -59,6 +52,7 @@ const Login = () => {
 
     return (
         <div className="container">
+            <NavBar></NavBar>
             <div className="mt-5">
                 <Link to="/home">
                     <Button style={{ backgroundColor: "#EA6077", border: "none", fontWeight: "500" }}>Go Back</Button>
