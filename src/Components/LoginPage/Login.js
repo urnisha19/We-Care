@@ -79,7 +79,6 @@ const Login = () => {
 
     return (
         <div className="container">
-            <NavBar></NavBar>
             <div className="mt-5">
                 <Link to="/home">
                     <Button style={{ backgroundColor: "#EA6077", border: "none", fontWeight: "500" }}>Go Back</Button>

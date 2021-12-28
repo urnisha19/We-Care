@@ -13,7 +13,7 @@ const ContactProcess = () => {
                     <img src={contactUs} className="img-fluid" alt="" />
                 </div>
                 <div className="col-md-6 col-12 col-sm-6">
-                    <p className="text-highlight">Process</p>
+                    <p className="text-highlight">Appointment Process</p>
                     <h3 className="mb-5">How We Consulting ?</h3>
                     <div>
                         <h5><FontAwesomeIcon icon={faHeadset} className="icon-color" />Call or Email Us First</h5>

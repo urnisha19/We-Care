@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
     const notMatchStyle = {
@@ -13,9 +15,14 @@ const NotFoundPage = () => {
     }
 
     return (
-        <div style={notMatchStyle}>
-            <h2>404 Error!!!</h2>
-            <h2>Route Not Found!!!</h2>
+        <div>
+            <div style={notMatchStyle}>
+                <h2>404 Error!!!</h2>
+                <h2>Route Not Found!!!</h2>
+                <Link to="/home">
+                    <Button className="mt-5 text-center" style={{ backgroundColor: "#EA6077", border: "none", fontWeight: "500" }}>Go Back</Button>
+                </Link>
+            </div>
         </div>
     );
 };
