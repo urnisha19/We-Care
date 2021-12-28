@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from './../../MultiSharedComponents/NavBar/NavBar';
 import AdminSideBar from './../AdminSideBar/AdminSideBar';
-import './AllAppointment.css';
+import AllAppointmentDetails from './AllAppointmentDetails';
 
 const AllAppointment = () => {
+    const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
+
+    const [allAppointmentsList, setAllAppointmentsList] = useState([]);
+
+    useEffect(() => {
+        fetch('https://serene-journey-72172.herokuapp.com/allAppointment')
+            .then(res => res.json())
+            .then(data => {
+                setAllAppointmentsList(data);
+            })
+    }, [])
 
     return (
         <div>
@@ -22,14 +33,20 @@ const AllAppointment = () => {
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Therapy</th>
-                                        <th>Service Charge</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                </tbody>
+                                {!isAdmin && <h4 className="text-danger">Sorry! You are not admin. </h4>}
+                                {isAdmin &&
+                                    <tbody>
+                                        {
+                                            allAppointmentsList.map(appointment => <AllAppointmentDetails appointment={appointment} />)
+                                        }
+                                    </tbody>
+                                }
                             </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import NavBar from '../../MultiSharedComponents/NavBar/NavBar';
 import AdminSideBar from '../AdminSideBar/AdminSideBar';
 import './AddTherapy.css';
 
 const AddTherapy = () => {
+    const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
+
+    const history = useHistory();
     const [info, setInfo] = useState({}); //for form info
     const [file, setFile] = useState(null); //for form image file
 
@@ -12,6 +16,7 @@ const AddTherapy = () => {
         newInfo[e.target.name] = e.target.value;
         setInfo(newInfo);
     }
+    //for image file upload
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
         setFile(newFile);
@@ -22,10 +27,17 @@ const AddTherapy = () => {
         formData.append('therapy_title', info.therapy_title)
         formData.append('therapy_description', info.therapy_description)
 
-        fetch('http://localhost:5000/addTherapy', {
+        fetch('https://serene-journey-72172.herokuapp.com/addTherapy', {
             method: 'POST',
             body: formData
         })
+            .then(response => response.json())
+            .then(data => {
+                history.replace('/');
+                history.go(0);
+            })
+        e.preventDefault();
+        alert("New appointment added successfully!");
     }
 
     return (
@@ -39,27 +51,30 @@ const AddTherapy = () => {
                     <div className="col-md-10 col-12 col-sm-10 ">
                         <h4 className="text-highlight">Add New Therapy</h4>
                         <div className="container p-4" style={{ backgroundColor: '#DFE9F2' }}>
-                            <form onSubmit={handleSubmit} className="py-5 px-4" style={{ backgroundColor: '#fff', padding: '10px', borderRadius: '10px' }}>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <label>Therapy title</label>
-                                        <input onBlur={handleBlur} name="therapy_title" className="form-control" type="text" placeholder="Enter the therapy title" required />
+                            {!isAdmin && <h4 className="text-danger">Sorry! You are not admin. </h4>}
+                            {isAdmin &&
+                                <form onSubmit={handleSubmit} className="py-5 px-4" style={{ backgroundColor: '#fff', padding: '10px', borderRadius: '10px' }}>
+                                    <div className="form-row">
+                                        <div className="form-group col-md-6">
+                                            <label>Therapy title</label>
+                                            <input onBlur={handleBlur} name="therapy_title" className="form-control" type="text" placeholder="Enter the therapy title" required />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <label>Description</label>
-                                        <textarea onBlur={handleBlur} name="therapy_description" className="form-control" type="text" placeholder="Course Description" required />
+                                    <div className="form-row">
+                                        <div className="form-group col-md-6">
+                                            <label>Description</label>
+                                            <textarea onBlur={handleBlur} name="therapy_description" className="form-control" type="text" placeholder="Course Description" required />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label>Image</label><br />
-                                    <input onChange={handleFileChange} type="file" name="image_file" required />
-                                </div>
-                                <div className="form-group d-flex justify-content-start pt-3">
-                                    <button type="submit" className="add-btn">Add Therapy</button>
-                                </div>
-                            </form>
+                                    <div className="form-group col-md-6">
+                                        <label>Image</label><br />
+                                        <input onChange={handleFileChange} type="file" name="image_file" required />
+                                    </div>
+                                    <div className="form-group d-flex justify-content-start pt-3">
+                                        <button type="submit" className="add-btn">Add Therapy</button>
+                                    </div>
+                                </form>
+                            }
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState , useEffect } from 'react';
 import { UserContext } from '../../App';
 import firebase from 'firebase/compat/app';
 import firebaseConfig from './firebase.config';
@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);//firebase initialization
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext); //consume userContext created in App.js
 
-    //Login kora por page redirect korar jonno useHistory() and useLocation() use kora hoy. history redirect kore and locationkun location tke asche state niye ashe
+    //Login kora por page redirect korar jonno useHistory() and useLocation() use kora hoy. history redirect kore and location kun location theke asche state niye ashe
     const history = useHistory();
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } }; //Private route teke login e ashle login kora por location.state dara oi component e jabe else home page e jabe. tarpor login hocche se function e amra history.replace(from) dara page replace kore dibo
@@ -27,6 +27,30 @@ const Login = () => {
 
     //Set error in state. Initial state an empty object
     const [error, setError] = useState({});
+
+    const [admins, setAdmins] = useState([]);
+    useEffect(() => {
+        fetch('https://serene-journey-72172.herokuapp.com/admins')
+            .then(res => res.json())
+            .then(data => {
+                setAdmins(data);
+            })
+    }, []) 
+
+    const checkAdmin = (email) => {
+        let isAdmin;
+        for (let i = 0; i < admins.length; i++) {
+            const element = admins[i];
+            if (element.email === email) {
+                isAdmin = true;
+                break;
+            }
+            else {
+                isAdmin = false;
+            }
+        }
+        localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
+    }
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
@@ -41,6 +65,9 @@ const Login = () => {
                     email: email
                 }
                 setLoggedInUser(signedInUser); //context e loggedInUser set 
+                checkAdmin(email);
+                localStorage.setItem("email", JSON.stringify(email));
+                localStorage.setItem("name", JSON.stringify(name));
                 history.replace(from); //sign in hobar pore kun page e jabe ta history.replace
             })
             .catch((error) => {

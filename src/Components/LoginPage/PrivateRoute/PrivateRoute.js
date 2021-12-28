@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { UserContext } from './../../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const [loggedInUser] = useContext(UserContext); //to check authenticated user or not
+    const email = JSON.parse(localStorage.getItem("email"));
 
     return (
         <Route {...rest}
-            render={({ location }) => loggedInUser.email ?
+            render={({ location }) => email ?
                 (children)
                 :
                 (<Redirect to={{ pathname: "/login", state: { from: location } }} />)

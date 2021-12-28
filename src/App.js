@@ -14,11 +14,12 @@ import MyAppointments from './Components/DashboardPage/MyAppointments/MyAppointm
 import AddReview from './Components/DashboardPage/AddReview/AddReview';
 import AllAppointment from './Components/AdminPage/AllApointment/AllAppointment';
 import AddTherapy from './Components/AdminPage/AddTherapy/AddTherapy';
+import MakeAdmin from './Components/AdminPage/MakeAdmin/MakeAdmin';
+import TherapyAppointment from './Components/OurTherapiesPage/Therapies/TherapyAppointment/TherapyAppoitment';
 import ContactUs from './Components/ContactUsPage/ContactUs';
 import Login from './Components/LoginPage/Login';
 import NotFoundPage from './Components/NotFound/NotFoundPage';
 import PrivateRoute from './Components/LoginPage/PrivateRoute/PrivateRoute';
-import TherapyDetail from './Components/OurTherapiesPage/Therapies/TherapyDetail/TherapyDetail';
 
 export const UserContext = createContext();
 
@@ -47,9 +48,9 @@ function App() {
           <Route path="/ourServices">
             <OurServices />
           </Route>
-          <Route path="/therapies/therapyDetail">
-            <TherapyDetail />
-          </Route>
+          <PrivateRoute path="/therapies/therapyAppointment">
+           <TherapyAppointment/>
+          </PrivateRoute>
 
           {/* Our Psychotherapists Page */}
           <Route path="/ourPsychotherapists">
@@ -70,6 +71,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/admin/addTherapy">
             <AddTherapy />
+          </PrivateRoute>
+          <PrivateRoute path="/admin/makeAdmin">
+            <MakeAdmin />
           </PrivateRoute>
 
           {/* Contact Us Page */}

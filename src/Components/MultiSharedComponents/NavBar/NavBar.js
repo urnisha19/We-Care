@@ -1,12 +1,19 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../../../App';
+import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import logo from '../../../Images/logo.svg'
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import { useHistory } from 'react-router-dom';
 
 const NavBar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const email = JSON.parse(localStorage.getItem("email"));
+
+    const history = useHistory();
+
+    const handleLogOut = () => {
+        localStorage.clear();
+        history.go(0);
+    }
 
     return (
         <Container>
@@ -25,8 +32,8 @@ const NavBar = () => {
                         <Link to="/dashboard/myAppointments" className="navBar-link">Your Dashboard</Link>
                         <Link to="/admin/allAppointments" className="navBar-link">Admin</Link>
                         {
-                            loggedInUser.email ?
-                                <Button onClick={() => setLoggedInUser({})} className="navBar-button">Logout</Button>
+                            email ?
+                                <Button onClick={handleLogOut} className="navBar-button">Logout</Button>
                                 :
                                 <Link to="/login" className="navBar-link">  <Button className="navBar-button">Login</Button></Link>
                         }

@@ -1,11 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import NavBar from './../../MultiSharedComponents/NavBar/NavBar';
 import ClientSideBar from './../ClientSideBar/ClientSideBar';
-import { UserContext } from './../../../App';
+import { useHistory } from 'react-router-dom';
 
 const AddReview = () => {
-    const [loggedInUser] = useContext(UserContext);
+    const name = JSON.parse(localStorage.getItem("name"));
+
     const [addReviewInfo, setAddReviewInfo] = useState({});
+    const history = useHistory();
 
     const handleBlur = (e) => {
         const newInfo = { ...addReviewInfo };
@@ -15,14 +17,21 @@ const AddReview = () => {
 
     const handleSubmit = (e) => {
         const formData = new FormData();
-        formData.append('name', loggedInUser.name);
+        formData.append('name', name);
         formData.append('occupation', addReviewInfo.occupation);
         formData.append('description', addReviewInfo.description);
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://serene-journey-72172.herokuapp.com/addReview', {
             method: 'POST',
             body: formData
         })
+            .then(response => response.json())
+            .then(data => {
+                history.replace('/');
+                history.go(0);
+            })
+        e.preventDefault();
+        alert("Added review successfully!");
     }
 
     return (
@@ -38,7 +47,7 @@ const AddReview = () => {
                         <div className="container p-4" style={{ backgroundColor: '#DFE9F2' }}>
                             <form onSubmit={handleSubmit} className="py-5 px-4" style={{ padding: '10px', borderRadius: '10px' }}>
                                 <div className="form-group">
-                                    <input onBlur={handleBlur} name="name" type="text" value={loggedInUser.name} className="form-control" required="true" />
+                                    <input onBlur={handleBlur} name="name" type="text" value={name} className="form-control" required="true" />
                                 </div>
                                 <div className="form-group mt-3">
                                     <input onBlur={handleBlur} name="occupation" placeholder="Occupation,Company’s name" className="form-control" required="true" />

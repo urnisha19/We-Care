@@ -5,7 +5,7 @@ const Therapies = () => {
     const [therapies, setTherapies] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/therapies')
+        fetch('https://serene-journey-72172.herokuapp.com/therapies')
             .then(res => res.json())
             .then(data => setTherapies(data))
     }, [])
