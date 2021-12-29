@@ -5,11 +5,11 @@ const Psychotherapists = () => {
     const Psychotherapists = [
         { id: "1", name: "Eliza J Norwood", img: "https://i.ibb.co/HV07STd/psychologist1.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
         { id: "2", name: "Stevous M Davis", img: "https://i.ibb.co/T2Hgq0q/psychologist2.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
-        { id: "3", name: "Maryland D Alers", img: "https://i.ibb.co/Csm1nCK/psychologist3.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
-        { id: "4", name: "Amy B Marchetti", img: "https://i.ibb.co/VWCYXxj/psychologist5.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
+        { id: "3", name: "Maryland D", img: "https://i.ibb.co/Csm1nCK/psychologist3.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
+        { id: "4", name: "Marchetti J", img: "https://i.ibb.co/VWCYXxj/psychologist5.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
         { id: "5", name: "Sherry D Pillow", img: "https://i.ibb.co/XVd68h7/psychologist4.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
         { id: "6", name: "Essielia F Sledge", img: "https://i.ibb.co/9yd4HF2/psychologist6.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
-        { id: "7", name: "Nancy McCracken", img: "https://i.ibb.co/7Nv5jFP/psychologist7.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
+        { id: "7", name: "Nancy", img: "https://i.ibb.co/7Nv5jFP/psychologist7.jpg", phone: "+8801000000000", email: "xyz@gmail.com" },
         { id: "8", name: "Maaria J Crispe", img: "https://i.ibb.co/9hhmvFw/psychologist8.jpg", phone: "+8801000000000", email: "xyz@gmail.com" }
     ];
 
