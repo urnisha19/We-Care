@@ -19,7 +19,7 @@ const MakeAdmin = () => {
         const formData = new FormData();
         formData.append('email', info.email);
 
-        fetch('https://serene-journey-72172.herokuapp.com/makeAdmin', {
+        fetch('https://we-care-server-w3we.onrender.com/makeAdmin', {
             method: 'POST',
             body: formData
         })

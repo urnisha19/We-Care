@@ -3,7 +3,6 @@ import { UserContext } from '../../App';
 import firebase from 'firebase/compat/app';
 import firebaseConfig from './firebase.config';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import NavBar from '../MultiSharedComponents/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import logo from '../../Images/logo.svg';
@@ -30,7 +29,7 @@ const Login = () => {
 
     const [admins, setAdmins] = useState([]);
     useEffect(() => {
-        fetch('https://serene-journey-72172.herokuapp.com/admins')
+        fetch('https://we-care-server-w3we.onrender.com/admins')
             .then(res => res.json())
             .then(data => {
                 setAdmins(data);

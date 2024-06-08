@@ -21,7 +21,7 @@ const AddReview = () => {
         formData.append('occupation', addReviewInfo.occupation);
         formData.append('description', addReviewInfo.description);
 
-        fetch('https://serene-journey-72172.herokuapp.com/addReview', {
+        fetch('https://we-care-server-w3we.onrender.com/addReview', {
             method: 'POST',
             body: formData
         })

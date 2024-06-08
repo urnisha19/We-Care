@@ -15,11 +15,13 @@ import AddReview from './Components/DashboardPage/AddReview/AddReview';
 import AllAppointment from './Components/AdminPage/AllApointment/AllAppointment';
 import AddTherapy from './Components/AdminPage/AddTherapy/AddTherapy';
 import MakeAdmin from './Components/AdminPage/MakeAdmin/MakeAdmin';
-import TherapyAppointment from './Components/OurTherapiesPage/Therapies/TherapyAppointment/TherapyAppoitment';
+import MakeAppointment from './Components/OurTherapiesPage/Therapies/TherapyAppointment/MakeAppointment';
 import ContactUs from './Components/ContactUsPage/ContactUs';
 import Login from './Components/LoginPage/Login';
 import NotFoundPage from './Components/NotFound/NotFoundPage';
 import PrivateRoute from './Components/LoginPage/PrivateRoute/PrivateRoute';
+import ManageAllTherapy from './Components/AdminPage/ManageAllTherapy/ManageAllTherapy';
+import EditTherapy from './Components/AdminPage/ManageAllTherapy/EditTherapy';
 
 export const UserContext = createContext();
 
@@ -28,15 +30,15 @@ function App() {
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      {/* <h1>Email:{loggedInUser.email}</h1> */}{/* Checked LoggedInUser set or not in the context */}
+      {/* <h1>Email:{loggedInUser.email}</h1> */}
       <Router>
         <Switch>
           {/* Home Page */}
           <Route exact path="/">
-            <Home></Home>
+            <Home />
           </Route>
           <Route path="/home">
-            <Home></Home>
+            <Home />
           </Route>
 
           {/* About Us Page */}
@@ -44,12 +46,13 @@ function App() {
             <AboutUs />
           </Route>
 
-          {/*Our Services Page */}
+          {/* Our Services Page */}
           <Route path="/ourServices">
             <OurServices />
           </Route>
-          <PrivateRoute path="/therapies/therapyAppointment">
-           <TherapyAppointment/>
+          
+          <PrivateRoute path="/therapies/therapyAppointment/:id">
+            <MakeAppointment />
           </PrivateRoute>
 
           {/* Our Psychotherapists Page */}
@@ -57,7 +60,7 @@ function App() {
             <PsychotherapistPage />
           </Route>
 
-          {/* Your Dashboard Page-only authenticate user */}
+          {/* Your Dashboard Page - only authenticated users */}
           <PrivateRoute path="/dashboard/myAppointments">
             <MyAppointments />
           </PrivateRoute>
@@ -65,12 +68,18 @@ function App() {
             <AddReview />
           </PrivateRoute>
 
-          {/* Admin Page-only authenticate user*/}
+          {/* Admin Page - only authenticated users */}
           <PrivateRoute path="/admin/allAppointments">
             <AllAppointment />
           </PrivateRoute>
           <PrivateRoute path="/admin/addTherapy">
             <AddTherapy />
+          </PrivateRoute>
+          <PrivateRoute path="/admin/manageTherapy">
+            <ManageAllTherapy />
+          </PrivateRoute>
+          <PrivateRoute path="/admin/editTherapy/:id">
+            <EditTherapy />
           </PrivateRoute>
           <PrivateRoute path="/admin/makeAdmin">
             <MakeAdmin />
@@ -86,11 +95,10 @@ function App() {
             <Login />
           </Route>
 
-          {/* Route Not Page */}
+          {/* Route Not Found Page */}
           <Route path="*">
             <NotFoundPage />
           </Route>
-
         </Switch>
       </Router>
     </UserContext.Provider>

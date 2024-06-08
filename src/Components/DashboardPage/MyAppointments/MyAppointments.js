@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './../../MultiSharedComponents/NavBar/NavBar';
 import ClientSideBar from '../ClientSideBar/ClientSideBar';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import bookingImg from '../../../Images/booking.png'
 
 const MyAppointments = () => {
@@ -9,7 +9,7 @@ const MyAppointments = () => {
     const [myAppointment, setMyAppointment] = useState([]);
 
     useEffect(() => {
-        fetch('https://serene-journey-72172.herokuapp.com/myAppointment?email=' + email)
+        fetch('https://we-care-server-w3we.onrender.com/myAppointment?email=' + email)
             .then(res => res.json())
             .then(data => {
                 setMyAppointment(data);

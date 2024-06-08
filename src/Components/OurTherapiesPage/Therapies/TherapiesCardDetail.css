@@ -19,3 +19,20 @@
     line-height: 24px;
     font-size: 15px;
 }
+
+.make-appointment-link {
+    text-decoration: none;
+    padding: 0px 20px;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: white;
+    border-bottom: 4px solid transparent;
+    transition: .5s;
+}
+
+.make-appointment-btn {
+    padding: 0.360rem 1.6rem;
+    background-color: #EA6077;
+    border: none;
+    font-weight: 500;
+}

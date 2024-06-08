@@ -9,7 +9,7 @@ const AllAppointment = () => {
     const [allAppointmentsList, setAllAppointmentsList] = useState([]);
 
     useEffect(() => {
-        fetch('https://serene-journey-72172.herokuapp.com/allAppointment')
+        fetch('https://we-care-server-w3we.onrender.com/allAppointment')
             .then(res => res.json())
             .then(data => {
                 setAllAppointmentsList(data);

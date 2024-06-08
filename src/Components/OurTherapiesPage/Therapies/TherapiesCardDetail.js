@@ -1,15 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import './TherapiesCardDetail.css'
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const TherapiesCardDetail = ({ therapy }) => {
-    const history = useHistory()
 
-    const handleOnClick = () => {
-        localStorage.setItem("therapyId", JSON.stringify(therapy._id));
-        history.replace('/therapies/therapyAppointment')
-    }
     return (
         <div className="col-md-4">
             <div className="rounded therapyDetail mb-5">
@@ -18,10 +13,11 @@ const TherapiesCardDetail = ({ therapy }) => {
                     <h4 className="text-highlight my-3">{therapy.title}</h4>
                 </div>
                 <div className="therapyDetail-text p-3">
-                    <p>{therapy.description}</p>
-                </div>
-                <div>
-                    <Button className="make-appointment-btn mt-3 mb-3" onClick={handleOnClick}>Make Appointment</Button>
+                    {/* <p>{therapy.description}</p> */}
+                    <p>{therapy.description.substring(0, 400)}{therapy.description.length > 400 && '...'}</p>
+                    <div>
+                        <Button className="make-appointment-btn mt-3 mb-3 white"><Link className="make-appointment-link" to={`/therapies/therapyAppointment/${therapy._id}`}>Make Appointment</Link></Button>
+                    </div>
                 </div>
             </div>
         </div>

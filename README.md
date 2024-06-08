@@ -1,7 +1,7 @@
 # We Care
 Live site: https://we-care-ef79f.web.app
 </br>
-server: https://serene-journey-72172.herokuapp.com
+server: https://we-care-server-w3we.onrender.com
 
 ## Features:
 A web application for providing mental health-related services like counseling, psychotherapy, etc. for a Mental Health Service provider agency.

@@ -8,26 +8,28 @@ const AddTherapy = () => {
     const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
 
     const history = useHistory();
-    const [info, setInfo] = useState({}); //for form info
-    const [file, setFile] = useState(null); //for form image file
+    const [info, setInfo] = useState({ title: '', description: '' });
+    const [file, setFile] = useState(null);
 
     const handleBlur = (e) => {
-        const newInfo = { ...info };
-        newInfo[e.target.name] = e.target.value;
-        setInfo(newInfo);
+        const { name, value } = e.target;
+        setInfo(prevInfo => ({ ...prevInfo, [name]: value }));
     }
-    //for image file upload
+
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
         setFile(newFile);
     }
-    const handleSubmit = (e) => {
-        const formData = new FormData();//initialize a new FormData object and then append the uploaded files in new formData
-        formData.append('image_file', file)
-        formData.append('therapy_title', info.therapy_title)
-        formData.append('therapy_description', info.therapy_description)
 
-        fetch('https://serene-journey-72172.herokuapp.com/addTherapy', {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('image', file); // Use 'image' instead of 'image_file'
+        formData.append('title', info.title);
+        formData.append('description', info.description);
+
+        fetch('https://we-care-server-w3we.onrender.com/addTherapy', {
             method: 'POST',
             body: formData
         })
@@ -36,17 +38,18 @@ const AddTherapy = () => {
                 history.replace('/');
                 history.go(0);
             })
-        e.preventDefault();
-        alert("New appointment added successfully!");
+            .catch(error => console.error('Error adding therapy:', error));
+
+        alert("New therapy added successfully!");
     }
 
     return (
         <div>
-            <NavBar></NavBar>
+            <NavBar />
             <div className="container">
                 <div className="row d-flex justify-content-between py-3">
                     <div className="col-md-2 col-12 col-2">
-                        <AdminSideBar></AdminSideBar>
+                        <AdminSideBar />
                     </div>
                     <div className="col-md-10 col-12 col-sm-10 ">
                         <h4 className="text-highlight">Add New Therapy</h4>
@@ -57,18 +60,18 @@ const AddTherapy = () => {
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Therapy title</label>
-                                            <input onBlur={handleBlur} name="therapy_title" className="form-control" type="text" placeholder="Enter the therapy title" required />
+                                            <input onBlur={handleBlur} name="title" className="form-control" type="text" placeholder="Enter the therapy title" required />
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Description</label>
-                                            <textarea onBlur={handleBlur} name="therapy_description" className="form-control" type="text" placeholder="Course Description" required />
+                                            <textarea onBlur={handleBlur} name="description" className="form-control" type="text" placeholder="Therapy Description" required />
                                         </div>
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label>Image</label><br />
-                                        <input onChange={handleFileChange} type="file" name="image_file" required />
+                                        <input onChange={handleFileChange} type="file" name="image" required /> {/* Use 'image' instead of 'image_file' */}
                                     </div>
                                     <div className="form-group d-flex justify-content-start pt-3">
                                         <button type="submit" className="add-btn">Add Therapy</button>
