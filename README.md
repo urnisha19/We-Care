@@ -1,6 +1,6 @@
 # We Care
 
-**Live Site:** [We Care](https://we-care-seven.vercel.app/)
+**Live Site:** https://we-care-seven.vercel.app/
 
 ## Features
 
