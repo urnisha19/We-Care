@@ -4,7 +4,9 @@ import AdminSideBar from './../AdminSideBar/AdminSideBar';
 import AllAppointmentDetails from './AllAppointmentDetails';
 
 const AllAppointment = () => {
-    const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
+    // FIX 1: Safely parse localStorage to prevent the "undefined" crash
+    const rawIsAdmin = localStorage.getItem("isAdmin");
+    const isAdmin = (rawIsAdmin && rawIsAdmin !== "undefined") ? JSON.parse(rawIsAdmin) : false;
 
     const [allAppointmentsList, setAllAppointmentsList] = useState([]);
 
@@ -14,6 +16,7 @@ const AllAppointment = () => {
             .then(data => {
                 setAllAppointmentsList(data);
             })
+            .catch(error => console.error("Failed to fetch appointments:", error)); // Added basic error handling
     }, [])
 
     return (
@@ -35,14 +38,29 @@ const AllAppointment = () => {
                                         <th>Therapy</th>
                                     </tr>
                                 </thead>
-                                {!isAdmin && <h4 className="text-danger">Sorry! You are not admin. </h4>}
-                                {isAdmin &&
+                                
+                                {!isAdmin && (
+                                    <tbody>
+                                        <tr>
+                                            <td colSpan="3">
+                                                <h4 className="text-danger mt-3">Sorry! You are not an admin. </h4>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                )}
+
+                                {isAdmin && (
                                     <tbody>
                                         {
-                                            allAppointmentsList.map(appointment => <AllAppointmentDetails appointment={appointment} />)
+                                            allAppointmentsList.map(appointment => (
+                                                <AllAppointmentDetails 
+                                                    key={appointment._id} // FIX 2: Added the unique key prop
+                                                    appointment={appointment} 
+                                                />
+                                            ))
                                         }
                                     </tbody>
-                                }
+                                )}
                             </table>
                         </div>
                     </div>
